@@ -39,16 +39,35 @@ const App = () => {
 
         <p className="message">Step {step}: {messages[step-1]}</p>
         <div className="buttons">
-          <button style={{backgroundColor: '#7950f2', color: "#fff"}} 
-          onClick={handlePrevious}
-          
-          >Prev</button>
-          <button style={{backgroundColor: '#7950f2', color: "#fff"}} onClick={handleNext}>Next</button>
+          <Button 
+            textColor="#fff" 
+            bgColor="#7950f2" 
+            onClick={handlePrevious} 
+            text="Prev" 
+      
+          ><span>👈</span> Prev </Button>
+          <Button 
+            textColor="#fff" 
+            bgColor="#7950f2" 
+            onClick={handleNext} 
+            text="Next" 
+          > Next <span>👉</span></Button>
+
         </div>
       </div>)
       }
     </>
   );
+}
+
+const Button = ({textColor, bgColor, onClick, children}) => {
+  return (
+  <button 
+    style={{backgroundColor: '#7950f2', color: "#fff"}} 
+    onClick={onClick}
+    >
+      {children}
+  </button>)
 }
 
 export default App;
